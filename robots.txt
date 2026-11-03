@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calchub-2s2.pages.dev/sitemap.xml
