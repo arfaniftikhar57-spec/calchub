@@ -7,3 +7,22 @@ a.card{text-decoration:none;color:inherit;display:block}
 .seo-content h2{font-size:23px}.seo-content h3{font-size:18px}
 .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .related a{color:#2056ae;text-decoration:none;background:#eef5ff;padding:8px 12px;border-radius:8px}
+/* CalcHub header fix */
+body > header {
+  background: #102a4e;
+  color: white;
+  padding: 17px max(20px, calc((100vw - 1100px)/2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+body > header .brand {
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-decoration: none;
+  display: inline-block;
+}
