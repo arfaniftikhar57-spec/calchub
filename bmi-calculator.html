@@ -1,12 +1,188 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BMI Calculator – Body Mass Index in kg or lb | CalcHub</title>
-<meta name="description" content="Calculate your adult BMI using height and weight in metric or imperial units. See your BMI category and learn what the result means.">
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BMI Calculator – Body Mass Index | CalcHub</title>
+<meta name="description" content="Free BMI calculator for adults. Calculate your Body Mass Index using kilograms, pounds, centimetres, feet and inches.">
 <link rel="canonical" href="https://calchub-2s2.pages.dev/bmi-calculator.html">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="stylesheet" href="style.css"></head><body>
+<link rel="stylesheet" href="style.css">
+<style>
+.bmi-container{max-width:760px;margin:35px auto;padding:20px}
+.bmi-card{background:#fff;border-radius:14px;padding:25px;box-shadow:0 3px 18px #00000012}
+.bmi-card h1{color:#12345b;font-size:30px}
+.bmi-card p{line-height:1.6;color:#536477}
+.bmi-field{margin:18px 0}
+.bmi-field label{display:block;font-weight:600;margin-bottom:8px}
+.bmi-field input,.bmi-field select{width:100%;box-sizing:border-box;padding:13px;border:1px solid #bcc8d6;border-radius:8px;font-size:16px}
+.bmi-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bmi-btn{width:100%;padding:15px;background:#12345b;color:white;border:0;border-radius:9px;font-size:18px;cursor:pointer;margin-top:15px}
+.bmi-result{display:none;background:#eef5ff;border-radius:12px;padding:22px;margin-top:22px;text-align:center}
+.bmi-number{font-size:44px;font-weight:800;color:#12345b}
+.bmi-note{font-size:14px;color:#596b7d}
+.bmi-error{color:#b42318;margin-top:12px}
+.bmi-info{margin-top:25px;line-height:1.7}
+@media(max-width:500px){.bmi-container{padding:12px;margin:18px auto}.bmi-card{padding:18px}.bmi-card h1{font-size:25px}}
+</style>
+</head>
+<body>
+
 <header>
-  <a href="index.html" class="brand">🧮 CalcHub</a>
-  <button onclick="location.href='index.html'">All Calculators</button>
+<a href="index.html" class="brand">🧮 CalcHub</a>
+<button onclick="location.href='index.html'">All Calculators</button>
 </header>
-  <footer><nav aria-label="Legal and information pages" class="footer-links"><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></nav><p>© <span id="year"></span> CalcHub · Free Online Calculators · Results are estimates where indicated.</p></footer><script src="calculators.js"></script></body></html>
+
+<main class="bmi-container">
+<section class="bmi-card">
+<h1>Free BMI Calculator</h1>
+<p>Calculate your Body Mass Index (BMI) using your height and weight. This calculator is intended for adults aged 20 and over.</p>
+
+<div class="bmi-field">
+<label for="weightUnit">Weight Unit</label>
+<select id="weightUnit" onchange="updateBMIUnits()">
+<option value="kg">Kilograms (kg)</option>
+<option value="lb">Pounds (lbs)</option>
+</select>
+</div>
+
+<div class="bmi-field">
+<label for="weight">Your Weight</label>
+<input id="weight" type="number" min="0.1" step="any" placeholder="Enter your weight">
+</div>
+
+<div class="bmi-field">
+<label for="heightUnit">Height Unit</label>
+<select id="heightUnit" onchange="updateBMIUnits()">
+<option value="cm">Centimetres (cm)</option>
+<option value="ft">Feet and Inches</option>
+</select>
+</div>
+
+<div id="cmSection" class="bmi-field">
+<label for="heightCm">Your Height (cm)</label>
+<input id="heightCm" type="number" min="1" step="any" placeholder="e.g. 175">
+</div>
+
+<div id="feetSection" class="bmi-grid" style="display:none">
+<div class="bmi-field">
+<label for="feet">Feet</label>
+<input id="feet" type="number" min="0" step="1" placeholder="e.g. 5">
+</div>
+<div class="bmi-field">
+<label for="inches">Inches</label>
+<input id="inches" type="number" min="0" max="11.99" step="any" placeholder="e.g. 9">
+</div>
+</div>
+
+<button class="bmi-btn" onclick="calculateBMI()">Calculate BMI</button>
+<p id="bmiError" class="bmi-error" role="alert"></p>
+
+<div id="bmiResult" class="bmi-result" aria-live="polite">
+<p>Your BMI</p>
+<div id="bmiNumber" class="bmi-number"></div>
+<h2 id="bmiCategory"></h2>
+<p id="healthyRange"></p>
+<p class="bmi-note">BMI is a screening measure, not a medical diagnosis.</p>
+</div>
+</section>
+
+<section class="bmi-info">
+<h2>What is BMI?</h2>
+<p>Body Mass Index (BMI) is a measure calculated from your height and weight. It can help indicate whether your weight is within a commonly used range for your height.</p>
+
+<h2>Adult BMI Categories</h2>
+<ul>
+<li>Below 18.5: Underweight</li>
+<li>18.5–24.9: Healthy weight</li>
+<li>25–29.9: Overweight</li>
+<li>30 or above: Obesity</li>
+</ul>
+
+<h2>How is BMI Calculated?</h2>
+<p>BMI = Weight (kg) ÷ Height (m)²</p>
+<p>BMI does not directly measure body fat and may be less informative for athletes, pregnant people and some other groups. BMI thresholds can also vary by ethnicity and clinical guidance. Speak to a healthcare professional for individual advice.</p>
+</section>
+</main>
+
+<footer>
+<nav aria-label="Legal and information pages" class="footer-links">
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact Us</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms.html">Terms &amp; Conditions</a>
+</nav>
+<p>© <span id="year"></span> CalcHub · Free Online Calculators · Results are estimates where indicated.</p>
+</footer>
+
+<script>
+function updateBMIUnits(){
+const unit=document.getElementById("heightUnit").value;
+document.getElementById("cmSection").style.display=unit==="cm"?"block":"none";
+document.getElementById("feetSection").style.display=unit==="ft"?"grid":"none";
+document.getElementById("weight").placeholder=document.getElementById("weightUnit").value==="kg"?"e.g. 70":"e.g. 154";
+document.getElementById("bmiResult").style.display="none";
+document.getElementById("bmiError").textContent="";
+}
+
+function calculateBMI(){
+const error=document.getElementById("bmiError");
+const result=document.getElementById("bmiResult");
+error.textContent="";
+result.style.display="none";
+
+let weight=Number(document.getElementById("weight").value);
+if(!Number.isFinite(weight)||weight<=0){
+error.textContent="Please enter a valid weight.";
+return;
+}
+if(document.getElementById("weightUnit").value==="lb"){
+weight=weight*0.45359237;
+}
+
+let height=0;
+if(document.getElementById("heightUnit").value==="cm"){
+const input=document.getElementById("heightCm").value;
+height=Number(input)/100;
+}else{
+const ftInput=document.getElementById("feet").value;
+const inInput=document.getElementById("inches").value;
+const ft=Number(ftInput);
+const inches=Number(inInput);
+if(ftInput===""&&inInput===""){
+error.textContent="Please enter your height.";
+return;
+}
+if(ft<0||inches<0||inches>=12){
+error.textContent="Please enter valid feet and inches (inches below 12).";
+return;
+}
+height=(ft*12+inches)*0.0254;
+}
+
+if(!Number.isFinite(height)||height<=0||height>3){
+error.textContent="Please enter a valid height.";
+return;
+}
+
+const bmi=weight/(height*height);
+let category="";
+if(bmi<18.5)category="Underweight";
+else if(bmi<25)category="Healthy weight";
+else if(bmi<30)category="Overweight";
+else category="Obesity";
+
+const low=18.5*height*height;
+const high=24.9*height*height;
+
+document.getElementById("bmiNumber").textContent=bmi.toFixed(1);
+document.getElementById("bmiCategory").textContent=category;
+document.getElementById("healthyRange").textContent=
+"Standard healthy BMI weight range for your height: "+low.toFixed(1)+"–"+high.toFixed(1)+" kg.";
+result.style.display="block";
+}
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
