@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Age Calculator – Exact Age & Next Birthday | CalcHub</title>
+<meta name="description" content="Free age calculator: find your exact age in years, months and days, total days and weeks lived, and the countdown to your next birthday.">
+<link rel="canonical" href="https://calchub-2s2.pages.dev/age-calculator.html">
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#1b2d4e;background:#f4f7fc}*{box-sizing:border-box}body{margin:0}header{background:#1a2c50;color:#fff;padding:19px max(20px,calc((100vw - 1040px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}header a{color:#fff;text-decoration:none}header strong{font-size:24px}header nav a{font-size:14px;border:1px solid #9eafcf;border-radius:8px;padding:9px 12px}main{max-width:850px;margin:36px auto;padding:0 16px}.panel{background:#fff;border:1px solid #dce5f1;border-radius:16px;padding:32px;box-shadow:0 5px 25px #1d365a0a}h1{font-size:clamp(28px,4vw,40px);margin:0 0 12px}h2{font-size:22px}p{line-height:1.7;color:#50617b}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}label{display:block;font-weight:650;margin-bottom:9px}input{width:100%;border:1px solid #b9c9df;border-radius:9px;padding:14px;font:inherit;color:#1b2d4e;background:#fff}button{background:#1e3764;color:white;border:0;border-radius:9px;padding:15px 24px;font-size:17px;cursor:pointer;width:100%;font-weight:650}button:hover{background:#3456a0}.error{color:#b42318;font-weight:600;margin-top:15px}.result{background:#f0f5ff;border:1px solid #d5e2fc;border-radius:12px;padding:22px;margin-top:22px}.big{font-size:clamp(25px,5vw,36px);font-weight:750;color:#18366b;margin:6px 0 18px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:white;border-radius:9px;padding:14px;text-align:center}.stat b{display:block;font-size:22px}.stat span{font-size:13px;color:#56657a}.small{font-size:14px}.info{margin-top:25px}footer{text-align:center;color:#65758a;font-size:13px;padding:30px}footer a{color:#3456a0}details{padding:14px 0;border-bottom:1px solid #dbe3ee}summary{cursor:pointer;font-weight:650}@media(max-width:600px){.fields{grid-template-columns:1fr}.panel{padding:21px}.stats{grid-template-columns:repeat(2,1fr)}header strong{font-size:20px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Age Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","isAccessibleForFree":true,"url":"https://calchub-2s2.pages.dev/age-calculator.html"}</script>
+</head>
+<body>
+<header><a href="/"><strong>🧮 CalcHub</strong></a><nav><a href="/">All Calculators</a></nav></header>
+<main><section class="panel"><h1>Free Age Calculator</h1><p>Calculate your exact age in years, months and days, and find out how long until your next birthday.</p>
+<form id="form"><div class="fields"><div><label for="dob">Date of Birth</label><input id="dob" type="date" required></div><div><label for="asof">Age at Date</label><input id="asof" type="date" required></div></div><button type="submit">Calculate Age</button></form>
+<div id="error" class="error" role="alert" aria-live="polite"></div>
+<section id="result" class="result" hidden aria-live="polite"><h2>Your Exact Age</h2><div id="age" class="big"></div><div class="stats"><div class="stat"><b id="months"></b><span>Completed Months</span></div><div class="stat"><b id="weeks"></b><span>Total Weeks</span></div><div class="stat"><b id="days"></b><span>Total Days</span></div></div><h2>Next Birthday</h2><p id="birthday"></p><p id="birthdayCountdown"></p><p class="small">Calculations use calendar dates, not time of day. For birthdays on 29 February, this tool uses 28 February in non-leap years.</p></section>
+</section><section class="panel info"><h2>How does this age calculator work?</h2><p>Enter your date of birth and the date on which you want to know your age. The calculator counts complete calendar years and months, then the remaining days. Total days are calculated from the difference between the two dates.</p><h2>Frequently Asked Questions</h2><details><summary>Can I calculate my age on a past date?</summary><p>Yes. Choose any date on or after your date of birth.</p></details><details><summary>Does this calculator account for leap years?</summary><p>Yes. It uses actual calendar dates, including leap years.</p></details><details><summary>Is my date of birth stored?</summary><p>No. The calculation happens in your browser; this page does not send your entered dates to a server.</p></details></section></main>
+<footer>© CalcHub · <a href="/privacy-policy.html">Privacy Policy</a> · <a href="/contact.html">Contact</a></footer>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const pad=n=>String(n).padStart(2,'0');
+const fmt=d=>`${d.getUTCFullYear()}-${pad(d.getUTCMonth()+1)}-${pad(d.getUTCDate())}`;
+const parse=s=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(s))return null;const [y,m,d]=s.split('-').map(Number);const dt=new Date(Date.UTC(y,m-1,d));return dt.getUTCFullYear()===y&&dt.getUTCMonth()===m-1&&dt.getUTCDate()===d?dt:null};
+const leap=y=>y%4===0&&(y%100!==0||y%400===0);
+const daysInMonth=(y,m)=>new Date(Date.UTC(y,m,0)).getUTCDate();
+function addMonthsClamped(date,n){const y=date.getUTCFullYear(),m=date.getUTCMonth(),day=date.getUTCDate();const target=new Date(Date.UTC(y,m+n,1));target.setUTCDate(Math.min(day,daysInMonth(target.getUTCFullYear(),target.getUTCMonth()+1)));return target}
+const diffDays=(a,b)=>Math.round((b-a)/86400000);
+function birthdayForYear(dob,year){let m=dob.getUTCMonth(),day=dob.getUTCDate();if(m===1&&day===29&&!leap(year))day=28;return new Date(Date.UTC(year,m,day))}
+function calculate(e){e.preventDefault();$('error').textContent='';$('result').hidden=true;const dob=parse($('dob').value),asof=parse($('asof').value);if(!dob||!asof){$('error').textContent='Please enter valid dates.';return}if(asof<dob){$('error').textContent='Age at Date cannot be before Date of Birth.';return}
+// Count complete months using the original birth date as the anchor.
+let totalMonths=(asof.getUTCFullYear()-dob.getUTCFullYear())*12+asof.getUTCMonth()-dob.getUTCMonth();while(totalMonths>0&&addMonthsClamped(dob,totalMonths)>asof)totalMonths--;while(addMonthsClamped(dob,totalMonths+1)<=asof)totalMonths++;
+const anchor=addMonthsClamped(dob,totalMonths),years=Math.floor(totalMonths/12),months=totalMonths%12,remaining=diffDays(anchor,asof),totalDays=diffDays(dob,asof);
+$('age').textContent=`${years} years, ${months} months, ${remaining} days`;
+$('months').textContent=totalMonths.toLocaleString();$('weeks').textContent=Math.floor(totalDays/7).toLocaleString();$('days').textContent=totalDays.toLocaleString();
+let next=birthdayForYear(dob,asof.getUTCFullYear());if(next<asof)next=birthdayForYear(dob,asof.getUTCFullYear()+1);
+const daysLeft=diffDays(asof,next);$('birthday').textContent=`${next.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',weekday:'long',timeZone:'UTC'})}`;
+$('birthdayCountdown').textContent=daysLeft===0?'Happy birthday! 🎉':`${daysLeft.toLocaleString()} days until your next birthday.`;
+$('result').hidden=false;
+}
+const now=new Date();$('asof').value=`${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;$('form').addEventListener('submit',calculate);
+</script>
+</body></html>
