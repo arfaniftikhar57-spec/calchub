@@ -1,0 +1,11 @@
+/* Shared CalcHub header/footer; intentionally scoped to avoid changing calculator forms. */
+.ch-header{background:#102a4e!important;color:#fff!important;padding:17px max(20px,calc((100vw - 1100px)/2))!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;box-sizing:border-box!important}
+.ch-header .ch-brand{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif!important;font-size:25px!important;font-weight:800!important;letter-spacing:-1px!important;color:#fff!important;text-decoration:none!important;line-height:1.3!important}
+.ch-header .ch-all{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif!important;font-size:16px!important;font-weight:500!important;color:#fff!important;text-decoration:none!important;border:1px solid #829ab6!important;background:transparent!important;border-radius:9px!important;padding:9px 13px!important;line-height:1.4!important;white-space:nowrap!important}
+.ch-header a:hover,.ch-footer a:hover{text-decoration:underline!important}
+.ch-header a:focus-visible,.ch-footer a:focus-visible{outline:3px solid #9bc2ff!important;outline-offset:3px!important}
+.ch-footer{background:#102a4e!important;color:#fff!important;text-align:center!important;padding:24px 20px!important;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif!important;font-size:14px!important;line-height:1.6!important;box-sizing:border-box!important}
+.ch-footer .ch-footer-links{display:flex!important;justify-content:center!important;flex-wrap:wrap!important;gap:12px 24px!important}
+.ch-footer a{color:#fff!important;text-decoration:none!important}
+.ch-footer p{margin:12px 0 0!important;color:#dce6f4!important}
+@media(max-width:480px){.ch-header{padding:14px 16px!important}.ch-header .ch-brand{font-size:21px!important}.ch-header .ch-all{font-size:14px!important;padding:8px 10px!important}}
