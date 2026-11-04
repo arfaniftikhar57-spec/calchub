@@ -1,0 +1,53 @@
+CALCHUB SEO RELEASE — 21 CALCULATORS
+Generated from uploaded GitHub repository
+
+WHAT WAS CHANGED
+- Unique descriptive page titles and meta descriptions for all 21 calculators
+- Consistent Open Graph descriptions and JSON-LD WebApplication descriptions
+- Replaced irrelevant cross-topic links with relevant internal links
+- Added accessible jump links to the side-by-side learning guides
+- Preserved calculators.js, languages.js, input forms and calculator functions
+
+WHAT IS NOT CLAIMED
+- No external backlink has been placed or published
+- No guarantee of Google ranking or indexing
+- No live browser functional regression testing has been performed
+- Tax and health calculators require detailed accuracy and policy verification
+
+COMPETITOR LESSONS
+NHS BMI: clear eligibility and limitations; NHS pregnancy: cycle-length adjustment and ultrasound context
+Nationwide: mortgage overpayments and interest-rate comparisons
+The Salary Calculator: tax code, Scotland, pension and overtime options
+
+BACKLINK OUTREACH PLAN
+1. Publish original calculation comparisons or embeddable reference resources first.
+2. Identify relevant resource pages and editors; request editorial consideration without payment.
+3. Submit only to directories that genuinely curate useful tools and permit submissions.
+4. Track domain, contact, status, date, destination page and result.
+5. Do not buy links, mass-post comments or claim links have been earned before confirmation.
+
+DEPLOYMENT
+Upload the contents of calchub-main/ to the GitHub repository root; check Cloudflare deployment.
+Then verify each calculator output, responsive layout, Search Console sitemap and URL inspection.
+
+age: Age Calculator – Exact Years, Months & Days
+bmi: BMI Calculator UK – Body Mass Index Guide
+body-fat: Body Fat Calculator – Estimate Body Fat Percentage
+calorie: Calorie Calculator – Daily Energy Needs Estimate
+compound-interest: Compound Interest Calculator – Savings Growth
+currency-converter: Currency Converter – Exchange Rate Calculator
+date-difference: Date Difference Calculator – Days Between Dates
+discount: Discount Calculator – Sale Price & Savings
+gpa: GPA Calculator – Grade Point Average Guide
+income-tax: UK Income Tax Calculator – Estimated Tax
+loan: Loan Calculator – Monthly Repayments & Interest
+mortgage: UK Mortgage Calculator – Monthly Repayments
+percentage: Percentage Calculator – Change, Increase & Decrease
+pregnancy-due-date: Pregnancy Due Date Calculator – Estimated Date
+profit-margin: Profit Margin Calculator – Margin vs Markup
+roi: ROI Calculator – Return on Investment Percentage
+salary: UK Salary Calculator – Take-Home Pay Estimate
+savings: Savings Calculator – Estimate Savings Growth
+scientific: Scientific Calculator Online – Maths Functions
+unit-converter: Unit Converter – Length, Weight & More
+vat: UK VAT Calculator – Add or Remove VAT

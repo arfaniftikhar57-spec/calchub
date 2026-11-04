@@ -1,0 +1,170 @@
+[
+  {
+    "calculator": "age",
+    "seo_title": "Age Calculator \u2013 Exact Years, Months & Days",
+    "related": [
+      "date-difference",
+      "percentage"
+    ]
+  },
+  {
+    "calculator": "bmi",
+    "seo_title": "BMI Calculator UK \u2013 Body Mass Index Guide",
+    "related": [
+      "body-fat",
+      "calorie"
+    ]
+  },
+  {
+    "calculator": "body-fat",
+    "seo_title": "Body Fat Calculator \u2013 Estimate Body Fat Percentage",
+    "related": [
+      "bmi",
+      "calorie"
+    ]
+  },
+  {
+    "calculator": "calorie",
+    "seo_title": "Calorie Calculator \u2013 Daily Energy Needs Estimate",
+    "related": [
+      "bmi",
+      "body-fat"
+    ]
+  },
+  {
+    "calculator": "compound-interest",
+    "seo_title": "Compound Interest Calculator \u2013 Savings Growth",
+    "related": [
+      "savings",
+      "percentage"
+    ]
+  },
+  {
+    "calculator": "currency-converter",
+    "seo_title": "Currency Converter \u2013 Exchange Rate Calculator",
+    "related": [
+      "unit-converter",
+      "percentage"
+    ]
+  },
+  {
+    "calculator": "date-difference",
+    "seo_title": "Date Difference Calculator \u2013 Days Between Dates",
+    "related": [
+      "age",
+      "percentage"
+    ]
+  },
+  {
+    "calculator": "discount",
+    "seo_title": "Discount Calculator \u2013 Sale Price & Savings",
+    "related": [
+      "percentage",
+      "profit-margin"
+    ]
+  },
+  {
+    "calculator": "gpa",
+    "seo_title": "GPA Calculator \u2013 Grade Point Average Guide",
+    "related": [
+      "percentage",
+      "scientific"
+    ]
+  },
+  {
+    "calculator": "income-tax",
+    "seo_title": "UK Income Tax Calculator \u2013 Estimated Tax",
+    "related": [
+      "salary",
+      "vat"
+    ]
+  },
+  {
+    "calculator": "loan",
+    "seo_title": "Loan Calculator \u2013 Monthly Repayments & Interest",
+    "related": [
+      "mortgage",
+      "compound-interest"
+    ]
+  },
+  {
+    "calculator": "mortgage",
+    "seo_title": "UK Mortgage Calculator \u2013 Monthly Repayments",
+    "related": [
+      "loan",
+      "savings"
+    ]
+  },
+  {
+    "calculator": "percentage",
+    "seo_title": "Percentage Calculator \u2013 Change, Increase & Decrease",
+    "related": [
+      "discount",
+      "profit-margin"
+    ]
+  },
+  {
+    "calculator": "pregnancy-due-date",
+    "seo_title": "Pregnancy Due Date Calculator \u2013 Estimated Date",
+    "related": [
+      "date-difference",
+      "age"
+    ]
+  },
+  {
+    "calculator": "profit-margin",
+    "seo_title": "Profit Margin Calculator \u2013 Margin vs Markup",
+    "related": [
+      "roi",
+      "discount"
+    ]
+  },
+  {
+    "calculator": "roi",
+    "seo_title": "ROI Calculator \u2013 Return on Investment Percentage",
+    "related": [
+      "profit-margin",
+      "compound-interest"
+    ]
+  },
+  {
+    "calculator": "salary",
+    "seo_title": "UK Salary Calculator \u2013 Take-Home Pay Estimate",
+    "related": [
+      "income-tax",
+      "mortgage"
+    ]
+  },
+  {
+    "calculator": "savings",
+    "seo_title": "Savings Calculator \u2013 Estimate Savings Growth",
+    "related": [
+      "compound-interest",
+      "mortgage"
+    ]
+  },
+  {
+    "calculator": "scientific",
+    "seo_title": "Scientific Calculator Online \u2013 Maths Functions",
+    "related": [
+      "percentage",
+      "unit-converter"
+    ]
+  },
+  {
+    "calculator": "unit-converter",
+    "seo_title": "Unit Converter \u2013 Length, Weight & More",
+    "related": [
+      "scientific",
+      "currency-converter"
+    ]
+  },
+  {
+    "calculator": "vat",
+    "seo_title": "UK VAT Calculator \u2013 Add or Remove VAT",
+    "related": [
+      "profit-margin",
+      "income-tax"
+    ]
+  }
+]
