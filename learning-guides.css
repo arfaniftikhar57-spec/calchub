@@ -1,0 +1,8 @@
+/* CalcHub: calculator-first layout with optional learning guide */
+.ch-learning-layout{max-width:1440px!important;width:calc(100% - 36px)!important;margin:32px auto!important;padding:0!important;display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);gap:24px;align-items:start}
+.ch-learning-layout>.ch-calculator-column,.ch-learning-layout>.ch-guide-column{min-width:0}
+.ch-learning-layout .ch-calculator-column>.panel,.ch-learning-layout .ch-calculator-column>.tool>.panel{margin:0}
+.ch-guide-column{background:#fff;border:1px solid #dfe7f2;border-radius:18px;padding:26px;box-shadow:0 6px 24px #12223b0a;color:#17243b;line-height:1.7}
+.ch-guide-column h2{font-size:clamp(22px,2.2vw,29px);margin:0 0 12px;line-height:1.25}.ch-guide-column h3{font-size:18px;margin:25px 0 8px;color:#152d56}.ch-guide-column p{margin:8px 0 12px}.ch-guide-column .ch-guide-intro{font-size:16px}.ch-guide-column .ch-guide-example{background:#f0f6ff;border-left:4px solid #285cdb;padding:14px 16px;border-radius:6px}.ch-guide-column details{border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0;background:#fbfdff}.ch-guide-column summary{cursor:pointer;font-weight:650}.ch-guide-column details p{margin-bottom:0}.ch-guide-column a{color:#174bc4}.ch-guide-column .ch-guide-caution{background:#fff9ed;padding:12px 15px;border-radius:9px;border:1px solid #f0dfb6}
+.ch-guide-column .ch-guide-meta{color:#546277;font-size:14px}.ch-guide-column ul{padding-left:22px}
+@media(max-width:900px){.ch-learning-layout{grid-template-columns:minmax(0,1fr);width:calc(100% - 24px)!important;margin:18px auto!important;gap:16px}.ch-guide-column{padding:20px}.ch-learning-layout .ch-calculator-column>.panel{padding:20px}}
