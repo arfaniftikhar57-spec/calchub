@@ -9,3 +9,6 @@
 .ch-footer a{color:#fff!important;text-decoration:none!important}
 .ch-footer p{margin:12px 0 0!important;color:#dce6f4!important}
 @media(max-width:480px){.ch-header{padding:14px 16px!important}.ch-header .ch-brand{font-size:21px!important}.ch-header .ch-all{font-size:14px!important;padding:8px 10px!important}}
+
+/* CalcHub multilingual language selector */
+.ch-header{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.ch-language-switcher{margin-inline-start:auto;display:flex;align-items:center;gap:6px}.ch-language-switcher label{color:#fff;font-size:17px}.ch-language-switcher select{width:auto;min-width:130px;max-width:170px;padding:9px 12px;border-radius:8px;border:1px solid #a6b8dc;background:white;color:#1c315c;font-size:14px;cursor:pointer}.ch-rtl{text-align:right}.ch-rtl .ch-header,.ch-rtl .ch-footer-links{direction:rtl}.ch-rtl input[type=number],.ch-rtl input[type=date],.ch-rtl .value,.ch-rtl .metric{direction:ltr}.ch-rtl .metric{flex-direction:row-reverse}@media(max-width:540px){.ch-language-switcher{margin-inline-start:0}.ch-language-switcher select{min-width:110px}}

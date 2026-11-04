@@ -28,4 +28,5 @@
 const form=document.getElementById('form');
 form.addEventListener('submit',function(e){e.preventDefault();const initial=Number(document.getElementById('initial').value),finalValue=Number(document.getElementById('final').value),costs=Number(document.getElementById('costs').value),error=document.getElementById('error'),result=document.getElementById('result');error.textContent='';result.style.display='none';if(![initial,finalValue,costs].every(Number.isFinite)||initial<=0||finalValue<0||costs<0){error.textContent='Enter a positive initial investment and non-negative final value and costs.';return;}const spent=initial+costs,profit=finalValue-spent,roi=profit/spent*100;const money=new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'});document.getElementById('profit').textContent=money.format(profit);document.getElementById('roi').textContent=roi.toLocaleString('en-GB',{maximumFractionDigits:2,minimumFractionDigits:2})+'%';document.getElementById('spent').textContent=money.format(spent);result.style.display='block';});
 </script>
-<script>document.querySelectorAll(".ch-year").forEach(e=>e.textContent=new Date().getFullYear());</script></body></html>
+<script>document.querySelectorAll(".ch-year").forEach(e=>e.textContent=new Date().getFullYear());</script><script defer src="languages.js"></script>
+</body></html>

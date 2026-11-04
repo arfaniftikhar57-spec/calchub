@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -23,5 +23,6 @@
 <section class="tool" id="scientific"><button class="back" onclick="goHome()">← Back to Home</button><div class="panel"><h1>🔬 Scientific Calculator</h1><p class="muted">Use arithmetic, powers, roots, sin, cos, tan, log and ln. Trigonometry uses degrees.</p><input aria-label="Scientific expression" class="calc-display" id="expression" onkeydown="if(event.key==='Enter')calculateScientific()" placeholder="e.g. sin(30)+sqrt(16)"/><div class="keys" id="scientificKeys"></div><div aria-live="polite" class="result" id="scientificResult">Enter an expression and press =.</div><p class="hint">Use * for multiplication, / for division, ^ for powers, and parentheses for grouping. Functions: sin(), cos(), tan(), sqrt(), log(), ln(), abs(). Constants: pi and e.</p></div></section>
 </main><footer class="ch-footer"><nav aria-label="Legal and information pages" class="ch-footer-links"><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></nav><p>© <span class="ch-year">2026</span> CalcHub · Free Online Calculators · Results are estimates where indicated.</p></footer>
 <script src="calculators.js"> </script>
-<script>document.querySelectorAll(".ch-year").forEach(e=>e.textContent=new Date().getFullYear());</script></body>
+<script>document.querySelectorAll(".ch-year").forEach(e=>e.textContent=new Date().getFullYear());</script><script defer src="languages.js"></script>
+</body>
 </html>
